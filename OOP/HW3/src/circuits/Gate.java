@@ -26,6 +26,16 @@ public abstract class Gate {
     public abstract Gate simplify();
 
     public String toString() {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(this.getName());
+
+        if (inGates.length > 1 || (inGates.length != 0 && inGates[0] != null)) {
+            stringBuilder.append("[");
+            for (Gate gate : inGates) {
+                stringBuilder.append(gate.toString()).append(", ");
+            }
+            stringBuilder.replace(stringBuilder.length() - 2, stringBuilder.length(), "]");
+        }
+        return stringBuilder.toString();
     }
 }
