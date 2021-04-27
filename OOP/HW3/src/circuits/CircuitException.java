@@ -1,3 +1,3 @@
 package circuits;
 
-public class CircuitException extends Exception{}
+public class CircuitException extends Exception {}

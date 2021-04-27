@@ -1,7 +1,7 @@
 package circuits;
 
 public class VarGate extends Gate {
-    protected Gate inGate;
+    protected Gate inGate = null;
     protected String name;
 
     public VarGate(String name) {
@@ -23,7 +23,9 @@ public class VarGate extends Gate {
 
     @Override
     public Gate simplify() {
-        return null;
+        if (inGate != null)
+            return inGate;
+        return this;
     }
 
     public void setVal(boolean value) {

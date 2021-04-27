@@ -25,6 +25,6 @@ public class TrueGate extends Gate {
 
     @Override
     public Gate simplify() {
-        return null;
+        return this;
     }
 }

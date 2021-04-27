@@ -20,6 +20,8 @@ public class NotGate extends Gate {
 
     @Override
     public Gate simplify() {
-        return null;
+        if (inGate.simplify() instanceof VarGate) // VarGate not initialized.
+            return this;
+        return (inGate.simplify() instanceof TrueGate) ? FalseGate.instance() : TrueGate.instance();
     }
 }
