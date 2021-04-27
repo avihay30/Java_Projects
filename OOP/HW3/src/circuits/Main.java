@@ -7,7 +7,7 @@ public class Main {
 
         Gate g1 = new Or2Gate(FalseGate.instance(), TrueGate.instance());
         Gate g2 = new Or2Gate(v1, new NotGate(v2));
-        Gate out = new AndGate(new Gate[] { g1, g2, TrueGate.instance() });
+        Gate out = new AndGate(new Gate[]{g1, g2, TrueGate.instance()});
 
         System.out.println(out + " = " + out.simplify());
 

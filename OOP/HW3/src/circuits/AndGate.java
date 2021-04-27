@@ -34,9 +34,10 @@ public class AndGate extends Gate {
         }
         Gate[] nonNullGates = Utils.clearNullFromArray(gates, i);
         if (nonNullGates.length > 1)
+            // if more then one unknowns combining them to one AndGate
             return new AndGate(nonNullGates);
         else if (nonNullGates.length == 1)
-            return nonNullGates[0];
-        return TrueGate.instance();
+            return nonNullGates[0]; // if only one gate left.
+        return TrueGate.instance(); // if all gates are true.
     }
 }

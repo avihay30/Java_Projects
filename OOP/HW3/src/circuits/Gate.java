@@ -34,6 +34,7 @@ public abstract class Gate {
             for (Gate gate : inGates) {
                 stringBuilder.append(gate.toString()).append(", ");
             }
+            // deleting last ", "
             stringBuilder.replace(stringBuilder.length() - 2, stringBuilder.length(), "]");
         }
         return stringBuilder.toString();

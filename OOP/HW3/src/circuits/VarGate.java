@@ -23,7 +23,7 @@ public class VarGate extends Gate {
 
     @Override
     public Gate simplify() {
-        if (inGate != null)
+        if (inGate != null) // if value was set to the gate.
             return inGate;
         return this;
     }

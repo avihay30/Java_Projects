@@ -1,7 +1,5 @@
 package circuits;
 
-import java.util.ArrayList;
-
 public class OrGate extends Gate {
     protected Gate[] inGates;
 
@@ -36,9 +34,10 @@ public class OrGate extends Gate {
         }
         Gate[] nonNullGates = Utils.clearNullFromArray(gates, i);
         if (nonNullGates.length > 1)
+            // if more then one unknowns combining them to one OrGate
             return new OrGate(nonNullGates);
         else if (nonNullGates.length == 1)
-            return nonNullGates[0];
-        return FalseGate.instance();
+            return nonNullGates[0];  // if only one gate left.
+        return FalseGate.instance(); // if all gates are false.
     }
 }
