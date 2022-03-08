@@ -41,12 +41,12 @@ public class RooterTester extends Tester {
 	// ------------------------------------------------------------
 
 	public static void main(String[] args) {
-		new RooterTester().myMain("root"); 
+		new RooterTester().myMain("root");
 	}
 
 	// ------------------------------------------------------------
 	// Here you can choose which tests to run.
-	
+
 	public void myTests() {
 		testStructure();
 		testRooter();
