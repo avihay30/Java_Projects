@@ -68,13 +68,12 @@ public class ExDetails {
 	// Put your details here (in English!)
 	public static ExDetails firstStudent() {
 		return new ExDetails("209286665", "Avihay", "Hadad",
-				"Avihay.Hadad@braude.ac.il");
+				"Avihay.Hadad@e.braude.ac.il");
 	}
 
 	// Put the second student details here
-	// Todo: fix Id of fisher 
 	public static ExDetails secondStudent() {
-		return new ExDetails("318882800", "Elad", "Fisher", "Avihay.Hadad@braude.ac.il");
+		return new ExDetails("318882800", "Elad", "Fisher", "Elad.Fisher@e.braude.ac.il");
 		// if there is only one student, then erase the above line, and do:
 		// return null;
 	}

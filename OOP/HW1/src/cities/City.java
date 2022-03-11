@@ -26,8 +26,7 @@ public class City {
         if (roads == null) {
             roads = new Road[10];
         }
-        roads[numRoads] = r;
-        numRoads++;
+        roads[numRoads++] = r;
     }
 
     /***
@@ -39,7 +38,7 @@ public class City {
 
         int minDistance = roads[0].getLength();
         City closestCity = getOtherCityInRoad(roads[0]);
-        for (int i = 0; i < numRoads; i++) {
+        for (int i = 1; i < numRoads; i++) {
             if (roads[i].getLength() < minDistance) {
                 minDistance = roads[i].getLength();
                 closestCity = getOtherCityInRoad(roads[i]);

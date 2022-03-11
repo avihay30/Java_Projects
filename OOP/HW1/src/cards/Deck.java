@@ -20,8 +20,7 @@ public class Deck {
 
         for (int cardNum = 0; cardNum < num; cardNum++) {
             for (int suitNum = 0; suitNum < totalNumOfSuits; suitNum++) {
-                cards[numOfCards] = new Card(cardNum, suitNum);
-                numOfCards++;
+                cards[numOfCards++] = new Card(cardNum, suitNum);
             }
         }
     }
@@ -29,7 +28,7 @@ public class Deck {
     /***
      * Generates num or `from.numOfCards` sized Deck by taking cards from `from` Deck
      * @param from Deck to take from
-     * @param num num of Crads to take, if possible
+     * @param num num of Cards to take, if possible
      */
     public Deck(Deck from, int num) {
         // set to the number of cards possible to pick from "Deck from".
@@ -68,7 +67,6 @@ public class Deck {
     public Card takeOne() {
         if (numOfCards == 0) return null;
 
-        // todo: check if need to set to null in the cards array slot...
         return cards[--numOfCards];
     }
 
