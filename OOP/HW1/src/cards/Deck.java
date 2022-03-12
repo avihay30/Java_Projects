@@ -80,29 +80,17 @@ public class Deck {
     }
 
     /***
-     * Performing a bubble sort on Deck
+     * Performing insertion sort on this Deck
      */
     public void sort() {
-        int unorderedLength = numOfCards;
-        // init default biggest card
-        int indexOfBiggest = 0;
-        Card biggestCard = cards[indexOfBiggest];
+        for (int i = 1; i < numOfCards; i++)
+            for (int j = i; j > 0 && cards[j].compareTo(cards[j - 1]) < 0; j--)
+                swap(j, j - 1);
+    }
 
-        for (int i = 0; i < numOfCards; i++) {
-            for (int j = 1; j < unorderedLength; j++) {
-                // check if cards[j] is bigger than biggestCard
-                if (biggestCard.compareTo(cards[j]) < 0) {
-                    biggestCard = cards[j];
-                    indexOfBiggest = j;
-                }
-            }
-            // switching last unsorted card with the biggest card
-            cards[indexOfBiggest] = cards[unorderedLength - 1];
-            cards[unorderedLength - 1] = biggestCard;
-            // reset biggestCard
-            biggestCard = cards[0];
-            indexOfBiggest = 0;
-            unorderedLength--;
-        }
+    private void swap(int i, int j) {
+        Card temp = cards[i];
+        cards[i] = cards[j];
+        cards[j] = temp;
     }
 }
