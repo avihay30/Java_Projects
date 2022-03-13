@@ -14,17 +14,20 @@ public class ReversedWords {
             if (root.num(getReversed(nextWord)) > 0) numOfReversed++;
             root.add(nextWord);
         }
+
+        scanner.close();
         return numOfReversed;
     }
 
     /**
      * reverse given string
+     *
      * @param str given string to reverse
      * @return reversed string
      */
     private static String getReversed(String str) {
         String reversedStr = "";
-        for (int i=str.length() - 1; i >= 0; i--) reversedStr += str.charAt(i);
+        for (int i = str.length() - 1; i >= 0; i--) reversedStr += str.charAt(i);
         return reversedStr;
     }
 }
