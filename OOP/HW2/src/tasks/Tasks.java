@@ -26,6 +26,7 @@ public class Tasks {
 
     public int[] order() {
         int[] outputOrder = new int[tasks.length];
+        initArr(outputOrder);
         int outputIndex = 0;
         int task = 0;
 
@@ -89,7 +90,15 @@ public class Tasks {
         }
         return false;
     }
-//
+
+    /**
+     * Init items in specified arr to -1
+     * @param arr to init in
+     */
+    private static void initArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) arr[i] = -1;
+    }
+
 //    public static void main(String[] args) {
 //        Tasks t = new Tasks(6);
 //        t.dependsOn(3, 2);
@@ -97,7 +106,7 @@ public class Tasks {
 //        t.dependsOn(2, 5);
 //        t.dependsOn(4, 5);
 //        boolean x = t.dependsOn(5, 6);
-////        t.dependsOn(5, 3);
+//        t.dependsOn(5, 3);
 //        System.out.println(Arrays.toString(t.order()));
 //        System.out.println(x);
 //    }

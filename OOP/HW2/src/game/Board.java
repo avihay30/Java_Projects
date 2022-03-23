@@ -91,6 +91,18 @@ public class Board {
     }
 
     /**
+     * calculating both directions (dx,dy) of given x,y player
+     *
+     * @return sum lengths of both directions
+     */
+    private int lineLength(int x, int y, int dx1, int dy1, int dx2, int dy2) {
+        int length = directedLineLength(x, y, dx1, dy1);
+        length += directedLineLength(x, y, dx2, dy2);
+        // in the calculations the board[x][y] is counted twice, so we subtract 1.
+        return length - 1;
+    }
+
+    /**
      * calculating length of a line in direction (dx,dy) [(0,0) is the current position]
      * that player board[x][y] is appear consistently
      *
@@ -111,18 +123,6 @@ public class Board {
             y += dy;
         }
         return length;
-    }
-
-    /**
-     * calculating both directions (dx,dy) of given x,y player
-     *
-     * @return sum lengths of both directions
-     */
-    private int lineLength(int x, int y, int dx1, int dy1, int dx2, int dy2) {
-        int length = directedLineLength(x, y, dx1, dy1);
-        length += directedLineLength(x, y, dx2, dy2);
-        // in the calculations the board[x][y] is counted twice, so we subtract 1.
-        return length - 1;
     }
 
     private static int max(int a, int b) {

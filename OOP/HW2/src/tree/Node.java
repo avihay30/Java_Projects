@@ -36,27 +36,4 @@ public class Node {
 
         return c - 'a';
     }
-
-//    public static void main(String[] args) {
-//        Node root = new Node();
-//        root.add("c");
-//        root.add("c");
-//        root.add("ab");
-//        root.add("az");
-//        root.add("az");
-//        root.add("az");
-//        root.add("az");
-//        root.add("a");
-//        root.add("a");
-//        root.add("a");
-//
-//        System.out.println(root.num(""));
-//        System.out.println(root.num("c"));
-//        System.out.println(root.num("az"));
-//        System.out.println(root.num("ab"));
-//        System.out.println(root.num("a"));
-//        System.out.println(root.num("cc"));
-//        root.add("cc");
-//        System.out.println(root.num("cc"));
-//    }
 }

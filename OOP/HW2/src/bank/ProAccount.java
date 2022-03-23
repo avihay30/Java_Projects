@@ -29,6 +29,8 @@ public class ProAccount extends Account {
     }
 
     private static String arrToString(int[] arr, int amount) {
+        if (amount == 0) return "[]";
+
         String str = "[";
         for (int i = 0; i < amount - 1; i++) str += arr[i] + ",";
         str += arr[amount - 1] + "]";
