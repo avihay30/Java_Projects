@@ -50,9 +50,4 @@ public class Game extends Board {
         }
         return null;
     }
-
-//    public static void main(String[] args) {
-//        Game g = new Game(3, 4, new Player("Red", 'R'), new Player("Black", 'B'));
-//        g.play();
-//    }
 }

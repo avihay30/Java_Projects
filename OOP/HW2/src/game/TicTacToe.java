@@ -15,9 +15,4 @@ public class TicTacToe extends Game {
     protected boolean doesWin(int x, int y) {
         return maxLineContaining(x, y) == 3;
     }
-
-//    public static void main(String[] args) {
-//        TicTacToe tacToe = new TicTacToe("avi", "david");
-//        tacToe.play();
-//    }
 }

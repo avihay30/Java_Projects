@@ -45,9 +45,4 @@ public class FourInARow extends Game {
         }
         return -1;
     }
-
-//    public static void main(String[] args) {
-//        FourInARow inARow = new FourInARow("White", "Black");
-//        inARow.play();
-//    }
 }

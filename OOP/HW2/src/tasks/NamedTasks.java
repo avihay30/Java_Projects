@@ -68,21 +68,4 @@ public class NamedTasks extends Tasks {
         }
         return -1;
     }
-//
-//    public static void main(String[] args) {
-//        String[] names = {"zero", "one", "two", "three", "four", "five"};
-//        NamedTasks t2 = new NamedTasks(names);
-////        t2.dependsOn("three", "two");
-////        t2.dependsOn("one", "three");
-////        t2.dependsOn("two", "five");
-////        t2.dependsOn("four", "five");
-//
-//        t2.dependsOn("three", "two");
-//        t2.dependsOn("zero", "three");
-//        t2.dependsOn("two", "five");
-//        t2.dependsOn("four", "five");
-////        t2.dependsOn("five", "three"); // should return null when added
-//
-//        System.out.println(Arrays.toString(t2.nameOrder()));
-//    }
 }
