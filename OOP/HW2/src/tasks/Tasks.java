@@ -1,7 +1,5 @@
 package tasks;
 
-import java.util.Arrays;
-
 /**
  * Tasks represents tasks as numbers, and handles adding dependents
  * and ordering them if possible.
@@ -10,23 +8,23 @@ public class Tasks {
     // holds all tasks and their dependents
     // (i.g: task 3 depends on 2 => tasks[3][2] == 1)
     // 0 in inner array stands for "no dependency"
-    private int[][] tasks;
+    private boolean[][] tasks;
 
     public Tasks(int num) {
-        tasks = new int[num][num];
+        tasks = new boolean[num][num];
     }
 
     public boolean dependsOn(int task1, int task2) {
         if (isInvalidTask(task1) || isInvalidTask(task2)) return false;
 
         // put "1" (=task1 depends on task2) to the appropriate cell.
-        tasks[task1][task2] = 1;
+        tasks[task1][task2] = true;
         return true;
     }
 
     public int[] order() {
         int[] outputOrder = new int[tasks.length];
-        initArr(outputOrder);
+        arrFill(outputOrder, -1);
         int outputIndex = 0;
         int task = 0;
 
@@ -61,8 +59,8 @@ public class Tasks {
      * @return whether a task is not dependents on anything (standalone)
      */
     private boolean isStandaloneTask(int task) {
-        for (int isDependent : tasks[task]) {
-            if (isDependent == 1) return false;
+        for (boolean isDependent : tasks[task]) {
+            if (isDependent) return false;
         }
         return true;
     }
@@ -75,7 +73,7 @@ public class Tasks {
     private void clearDependents(int task) {
         for (int i = 0; i < tasks.length; i++) {
             // reset dependence
-            if (tasks[i][task] == 1) tasks[i][task] = 0;
+            if (tasks[i][task]) tasks[i][task] = false;
         }
     }
 
@@ -94,8 +92,9 @@ public class Tasks {
     /**
      * Init items in specified arr to -1
      * @param arr to init in
+     * @param value the value to insert to all item
      */
-    private static void initArr(int[] arr) {
-        for (int i = 0; i < arr.length; i++) arr[i] = -1;
+    private static void arrFill(int[] arr, int value) {
+        for (int i = 0; i < arr.length; i++) arr[i] = value;
     }
 }

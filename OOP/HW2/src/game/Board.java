@@ -32,7 +32,6 @@ public class Board {
 
     /**
      * Iterate over all the board and checks if full
-     *
      * @return true if whole board is full.
      */
     public boolean isFull() {
@@ -45,6 +44,7 @@ public class Board {
         return true;
     }
 
+    @Override
     public String toString() {
         String strToReturn = "";
         for (int i = 0; i < n; i++) {
@@ -54,7 +54,6 @@ public class Board {
             }
             strToReturn += "\n";
         }
-
         return strToReturn;
     }
 

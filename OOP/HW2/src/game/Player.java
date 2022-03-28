@@ -18,6 +18,6 @@ public class Player {
     }
 
     public String toString() {
-        return String.format("%s(%s)", name, mark);
+        return String.format("%s(%c)", name, mark);
     }
 }

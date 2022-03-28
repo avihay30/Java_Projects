@@ -9,7 +9,7 @@ public class FourInARow extends Game {
 
     @Override
     protected boolean doesWin(int i, int j) {
-        return maxLineContaining(i, j) == 4;
+        return maxLineContaining(i, j) >= 4;
     }
 
     @Override

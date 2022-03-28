@@ -1,7 +1,5 @@
 package tasks;
 
-import java.util.Arrays;
-
 /**
  * NamedTasks represents tasks as names, and handles adding dependents
  * and ordering them if possible, by subclassing Tasks Class.
@@ -13,7 +11,11 @@ public class NamedTasks extends Tasks {
 
     public NamedTasks(String[] names) {
         super(names.length);
-        this.names = names;
+        this.names = new String[names.length];
+        // copy names array to this.names
+        for (int i = 0; i < names.length; i++) {
+            this.names[i] = names[i];
+        }
     }
 
     /**
@@ -21,9 +23,6 @@ public class NamedTasks extends Tasks {
      * @return true if adding dependence has been done. false, if tasks are invalid.
      */
     public boolean dependsOn(String task1, String task2) {
-        // check if task1/2 aren't exists
-        if (!contains(task1) || !contains(task2)) return false;
-
         return super.dependsOn(getIndexOf(task1), getIndexOf(task2));
     }
 
@@ -45,17 +44,6 @@ public class NamedTasks extends Tasks {
             orderedNamedTasks[i] = names[orderedTasks[i]];
         }
         return orderedNamedTasks;
-    }
-
-    /**
-     * @param task the specified element to search for
-     * @return true if names array contains the specified task
-     */
-    private boolean contains(String task) {
-        for (String name : names) {
-            if (task.equals(name)) return true;
-        }
-        return false;
     }
 
     /**

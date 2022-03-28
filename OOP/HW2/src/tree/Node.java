@@ -2,8 +2,8 @@ package tree;
 
 public class Node {
     private int count;
-    // 26 stands for lower-case letters in english alphabet.
-    private Node[] children = new Node[26];
+    // children length is 26 stands for lower-case letters in english alphabet.
+    private Node[] children = new Node['z' - 'a' + 1];
 
     public int num(String s) {
         if (s.isEmpty()) return count;
@@ -31,7 +31,6 @@ public class Node {
      * @return corresponding index in children array if exists, else -1
      */
     private int getIndex(char c) {
-        // todo: check if necessary
         if (c > 'z' || c < 'a') return -1;
 
         return c - 'a';

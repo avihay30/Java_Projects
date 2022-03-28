@@ -1,7 +1,5 @@
 package bank;
 
-import java.util.Arrays;
-
 public class ProAccount extends Account {
     // according to requirements account history is up to 100
     private int[] accountHistory = new int[100];
@@ -37,16 +35,4 @@ public class ProAccount extends Account {
 
         return str;
     }
-
-//    public static void main(String[] args) {
-//        ProAccount a = new ProAccount("Shimshon");
-//        ProAccount b = new ProAccount("Yovav");
-//        a.add(1000);
-//        ProAccount.transfer(a, b, 100);
-//        a.add(200);
-//        ProAccount.transfer(a, b, 50);
-//
-//        System.out.println(a);
-//        System.out.println(b);
-//    }
 }
