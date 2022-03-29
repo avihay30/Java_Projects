@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * FourInARow is a Game that represents the famous game FourInARow.
+ */
 public class FourInARow extends Game {
 
     public FourInARow(String player1, String player2) {
@@ -12,6 +15,11 @@ public class FourInARow extends Game {
         return maxLineContaining(i, j) >= 4;
     }
 
+    /**
+     * asks for a wanted column from user to place in the game
+     * @param p Player to play
+     * @return true if player `p` won.
+     */
     @Override
     protected boolean onePlay(Player p) {
         int column, row;

@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * Board represents a Board in some game, according to a matrix of players.
+ */
 public class Board {
     protected Player[][] board;
     protected int n, m;
@@ -10,6 +13,9 @@ public class Board {
         this.m = m;
     }
 
+    /**
+     * @return true if setting p in board[i,j] has been successful
+     */
     protected boolean set(int i, int j, Player p) {
         // if slot is taken
         if (!isEmpty(i, j)) return false;

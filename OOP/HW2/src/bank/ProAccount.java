@@ -1,5 +1,9 @@
 package bank;
 
+/**
+ * ProAccount is a Account, that represents an account that
+ * stores all transactions, and able to transfer money from one ProAccount to another.
+ */
 public class ProAccount extends Account {
     // according to requirements account history is up to 100
     private int[] accountHistory = new int[100];
@@ -21,6 +25,11 @@ public class ProAccount extends Account {
         return String.format("%s %s", super.toString(), arrToString(accountHistory, currentHistory));
     }
 
+    /**
+     * @param from which account to withdraw amount
+     * @param to which account add amount
+     * @param amount how much to transfer
+     */
     public static void transfer(ProAccount from, ProAccount to, int amount) {
         from.add(-amount);
         to.add(amount);

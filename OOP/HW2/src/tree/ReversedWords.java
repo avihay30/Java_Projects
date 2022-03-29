@@ -2,6 +2,10 @@ package tree;
 
 import java.util.Scanner;
 
+/**
+ * ReversedWords has a function that making use of Node Class,
+ * the function returns the amount of reversed words that was inputted by the user.
+ */
 public class ReversedWords {
 
     public static int checkReversed() {
@@ -12,7 +16,9 @@ public class ReversedWords {
         // checks if there is left to scan and it's not "X" (=ending letter)
         while (scanner.hasNext() && !scanner.hasNext("X")) {
             String nextWord = scanner.next();
+            // if reversed word was inserted already
             if (root.num(getReversed(nextWord)) > 0) numOfReversed++;
+            // inserting the current word
             root.add(nextWord);
         }
 

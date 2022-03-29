@@ -1,5 +1,8 @@
 package bank;
 
+/**
+ * Account represents an account in some bank.
+ */
 public class Account {
     private String name;
     private int shekels;

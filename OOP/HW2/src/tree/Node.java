@@ -1,5 +1,10 @@
 package tree;
 
+/**
+ * Node represents a Node in a tree of strings (lower-case english alphabet),
+ * that each node has 26 children Nodes, and count that holds how many times
+ * the appropriate string has been added.
+ */
 public class Node {
     private int count;
     // children length is 26 stands for lower-case letters in english alphabet.

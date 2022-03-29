@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * TicTacToe is a Game that represents the famous game TicTacToe.
+ */
 public class TicTacToe extends Game {
 
     public TicTacToe(String player1, String player2) {
