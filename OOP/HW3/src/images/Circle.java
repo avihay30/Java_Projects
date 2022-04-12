@@ -26,14 +26,9 @@ public class Circle extends BaseImage {
      * @param x x-axis coordinate
      * @param y y-axis coordinate
      * @return the color of the image in some (x, y) coordinate.
-     * @throws IllegalArgumentException if given x or y is outside the scope of image dimensions
      */
     @Override
     public RGB get(int x, int y) {
-        // check if is valid x,y, throw argument exception if not
-        if (x > getWidth() || x < 0 || y > getHeight() || y < 0 )
-            throw new IllegalArgumentException("x,y should be in image height, width dimensions");
-
         // calculating distance from center => [d=√((x_2-x_1)²+(y_2-y_1)²)]
         double d = Math.sqrt(Math.pow(centerX - x, 2) + Math.pow(centerY - y, 2));
         /* calculating the amount of mix between center <-> outside colors

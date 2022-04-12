@@ -22,7 +22,6 @@ public class Transpose implements Image {
      * @param x x-axis coordinate
      * @param y y-axis coordinate
      * @return the color of the transposed image in some (x, y) coordinate.
-     * @throws IllegalArgumentException if given x or y is outside the scope of transposed baseImage dimensions
      */
     @Override
     public RGB get(int x, int y) {

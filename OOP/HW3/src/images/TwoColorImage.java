@@ -17,14 +17,9 @@ public class TwoColorImage extends BaseImage {
      * @param x x-axis coordinate
      * @param y y-axis coordinate
      * @return the color of the image in some (x, y) coordinate.
-     * @throws IllegalArgumentException if given x or y is outside the scope of image dimensions
      */
     @Override
     public RGB get(int x, int y) {
-        // check if is valid x,y, throw argument exception if not
-        if (x > getWidth() || x < 0 || y > getHeight() || y < 0 )
-            throw new IllegalArgumentException("x,y should be in image height, width dimensions");
-
         // normalizing x,y
         double xNorm = (double) x / getWidth();
         double yNorm = (double) y / getHeight();

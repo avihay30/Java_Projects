@@ -5,7 +5,7 @@ package images;
 public abstract class ImageDecorator implements Image {
     protected final Image baseImage;
 
-    protected ImageDecorator(Image baseImage) {
+    public ImageDecorator(Image baseImage) {
         this.baseImage = baseImage;
     }
 

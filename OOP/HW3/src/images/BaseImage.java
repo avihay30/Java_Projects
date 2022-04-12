@@ -4,7 +4,7 @@ package images;
 public abstract class BaseImage implements Image {
     private final int width, height;
 
-    protected BaseImage(int width, int height) {
+    public BaseImage(int width, int height) {
         this.width = width;
         this.height = height;
     }

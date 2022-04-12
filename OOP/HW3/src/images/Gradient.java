@@ -14,14 +14,10 @@ public class Gradient extends BaseImage {
      * @param x x-axis coordinate
      * @param y y-axis coordinate
      * @return the color of the image in some (x, y) coordinate.
-     * @throws IllegalArgumentException if given x is outside the scope of image-width dimensions
      */
     @Override
     public RGB get(int x, int y) {
-        // check if is valid x, throw argument exception if not
-        if (x > getWidth() || x < 0) throw new IllegalArgumentException("x should be in image-width dimensions");
-
-        // x/imageWidth = 0 => x = 0, and it's the left color so we send to mix the opposite calculation
+        // (x / imageWidth) = 0 => x = 0, and it's the left color so we send to mix the opposite calculation
         return RGB.mix(leftRGB, rightRGB, 1 - (double) x/getWidth());
     }
 

@@ -9,7 +9,7 @@ public class RGB {
     public static final RGB GREEN = new RGB(0, 1, 0);
     public static final RGB BLUE = new RGB(0, 0, 1);
 
-    private double red, green, blue;
+    private final double red, green, blue;
 
     public RGB(double red, double green, double blue) {
         this.red = red;
@@ -65,9 +65,6 @@ public class RGB {
      * according to the formula => alpha * color1 + (1-alpha) * color2
      */
     public static RGB mix(RGB rgb1, RGB rgb2, double alpha) {
-        // throwing Argument exception if given alpha is not valid
-        if (alpha < 0 || alpha > 1)
-            throw new IllegalArgumentException("given alpha invalid, should be in range of [0,1]");
         return new RGB(
                 alpha * rgb1.red + (1 - alpha) * rgb2.red,
                 alpha * rgb1.green + (1 - alpha) * rgb2.green,
