@@ -3,7 +3,7 @@ package iterator;
 // class that has only one static method for converting some iterator to string in array format ("[...]")
 // class is final in order to not allow inheriting this class.
 public final class IteratorToString {
-    // empty constructor, not to allow `new` on this class. it's a util class
+    // empty constructor, not to allow `new` on this class. it's a utility class
     private IteratorToString() {}
 
     /**

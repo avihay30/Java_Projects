@@ -4,13 +4,13 @@ import java.util.NoSuchElementException;
 
 // class that simply implements MyIterator for array of ints
 public class MyArray implements MyIterator {
-    private int[] arr;
+    private final int[] arr;
     private int index; // holds the index of the `next` element in arr
 
     public MyArray(int[] arr) {
         this.arr = new int[arr.length];
         // copying given arr to class arr
-        for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
             this.arr[i] = arr[i];
         }
     }

@@ -3,9 +3,9 @@ package iterator;
 // class that implements MyIterator that each call to next()
 // returns the next number in Fibonacci series.
 public class Fibonacci implements MyIterator {
-    private int upperBound;
-    // holds the last (idx = 1) and before last (idx = 0) numbers of the Fibonacci series
-    private int[] prevNumbers = new int[2];
+    private final int upperBound;
+    // holds the last (index = 1) and before last (index = 0) numbers of the Fibonacci series
+    private final int[] prevNumbers = new int[2];
 
     public Fibonacci(int upperBound) {
         this.upperBound = upperBound;

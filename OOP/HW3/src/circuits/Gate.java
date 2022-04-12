@@ -7,6 +7,7 @@ public abstract class Gate {
 
     public Gate(Gate[] inGates) {
         this.inGates = new Gate[inGates.length];
+        // copying given inGates to class inGates
         for (int i = 0; i < inGates.length; i++) {
             this.inGates[i] = inGates[i];
         }
