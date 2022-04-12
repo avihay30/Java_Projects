@@ -26,7 +26,7 @@ public class TrueGate extends Gate {
     }
 
     @Override
-    public Gate si:mplify() {
+    public Gate simplify() {
         // can't bee simplified so returning this gate
         return this;
     }
