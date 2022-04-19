@@ -3,24 +3,21 @@ package images;
 // class that is a BaseImage and represents a circle shape in image
 public class Circle extends BaseImage {
     private final int centerX, centerY, radius;
-    private final RGB center, outside;
 
     public Circle(int width, int height, int centerX, int centerY, int radius, RGB center, RGB outside) {
-        super(width, height);
+        // center is color1, outside is color2
+        super(width, height, center, outside);
         this.centerX = centerX;
         this.centerY = centerY;
         this.radius = radius;
-        this.center = center;
-        this.outside = outside;
     }
 
     public Circle(int size, int radius, RGB center, RGB outside) {
-        super(size, size);
+        // center is color1, outside is color2
+        super(size, size, center, outside);
         centerX = size / 2;
         centerY = size / 2;
         this.radius = radius;
-        this.center = center;
-        this.outside = outside;
     }
     /**
      * @param x x-axis coordinate
@@ -35,8 +32,8 @@ public class Circle extends BaseImage {
            and the mix method should get alpha in range [0,1] */
         double dPercentage = Math.min(d / radius, 1);
 
-        // dPercentage = 0 is center color so we send to mix the opposite dPercentage
-        return RGB.mix(center, outside, 1 - dPercentage);
+        // dPercentage = 0 is center color. so we send to mix the opposite dPercentage
+        return RGB.mix(color1, color2, 1 - dPercentage);
     }
 
 //    public static void main(String[] args) {

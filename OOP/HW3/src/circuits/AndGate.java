@@ -54,7 +54,7 @@ public class AndGate extends Gate {
         // if only one non True child left
         if (count == 1) return simplifiedArr[0];
 
-        // if more then one unknowns combining them to one OrGate
+        // if more than one unknown combining them to one OrGate
         return new AndGate(simplifiedArr);
     }
 }

@@ -15,13 +15,16 @@ public final class IteratorToString {
         // appending the next in the iterator and space afterwards
         while(it.hasNext())
             stringBuilder.append(it.next()).append(" ");
-        stringBuilder.deleteCharAt(stringBuilder.length() - 1); // delete last empty space
+        if (stringBuilder.length() != 1) // if the iterator wasn't empty
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1); // delete last empty space
         stringBuilder.append("]");
 
         return stringBuilder.toString();
     }
 
 //    public static void main(String[] args) {
-//        System.out.println(IteratorToString.toString(new Fibonacci(10)));
+//        System.out.println(IteratorToString.toString(new Fibonacci(-1)));
+//        System.out.println(IteratorToString.toString(new Fibonacci(8)));
+//        System.out.println(IteratorToString.toString(new MyArray(new int[]{1, 2})));
 //    }
 }

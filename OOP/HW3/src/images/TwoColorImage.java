@@ -3,13 +3,11 @@ package images;
 // class that is a BaseImage and represents an image
 // that is based on two colors according to some given TwoDFunc
 public class TwoColorImage extends BaseImage {
-    private final RGB zeroRGB, oneRGB;
     private final TwoDFunc func;
 
     public TwoColorImage(int width, int height, RGB zero, RGB one, TwoDFunc func) {
-        super(width, height);
-        this.zeroRGB = zero;
-        this.oneRGB = one;
+        // zeroRGB is color1, oneRGB is color2
+        super(width, height, zero, one);
         this.func = func;
     }
 
@@ -28,7 +26,7 @@ public class TwoColorImage extends BaseImage {
         alpha = Math.min(alpha, 1);
         alpha = Math.max(alpha, 0);
         // alpha = 0 is zeroRGB color so we send to mix the opposite alpha
-        return RGB.mix(zeroRGB, oneRGB, 1 - alpha);
+        return RGB.mix(color1, color2, 1 - alpha);
     }
     
 //    public static void main(String[] args) {

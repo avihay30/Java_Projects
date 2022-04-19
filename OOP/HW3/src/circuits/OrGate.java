@@ -51,10 +51,10 @@ public class OrGate extends Gate {
             if (!(inGate instanceof FalseGate)) simplifiedArr[simplifiedIndex++] = inGate;
         }
 
-        // if only one non False child left
+        // if only one non false child left
         if (count == 1) return simplifiedArr[0];
 
-        // if more then one unknowns combining them to one OrGate
+        // if more than one unknown combining them to one OrGate
         return new OrGate(simplifiedArr);
     }
 }
