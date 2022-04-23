@@ -19,6 +19,7 @@ public class Circle extends BaseImage {
         centerY = size / 2;
         this.radius = radius;
     }
+
     /**
      * @param x x-axis coordinate
      * @param y y-axis coordinate
@@ -26,7 +27,7 @@ public class Circle extends BaseImage {
      */
     @Override
     public RGB get(int x, int y) {
-        // calculating distance from center => [d=√((x_2-x_1)²+(y_2-y_1)²)]
+        // calculating distance from center => [d=sqrt((x_2-x_1)^2+(y_2-y_1)^2)]
         double d = Math.sqrt(Math.pow(centerX - x, 2) + Math.pow(centerY - y, 2));
         /* calculating the amount of mix between center <-> outside colors
            and the mix method should get alpha in range [0,1] */
@@ -35,13 +36,4 @@ public class Circle extends BaseImage {
         // dPercentage = 0 is center color. so we send to mix the opposite dPercentage
         return RGB.mix(color1, color2, 1 - dPercentage);
     }
-
-//    public static void main(String[] args) {
-//        RGB g1 = new RGB(0.2, 0.7, 0.111);
-//        RGB g2 = new RGB(0.9, 0.3, 0.75);
-//        RGB g3 = new RGB(0.3, 0.6, 0.21);
-//        Image circle = new Circle(20, 10, 5, 8, 10, g1, g2);
-//        circle.get(4, 7); // new RGB(0.29899495, 0.643431, 0.201368), "inside circle");
-//        circle.get(19, 9); // , g2, "outside circle");
-//    }
 }

@@ -35,11 +35,4 @@ public class Fibonacci implements MyIterator {
         prevNumbers[1] = nextNum;
         return nextNum;
     }
-
-//    public static void main(String[] args) {
-//        MyIterator it = new Fibonacci(10);
-//        while(it.hasNext())
-//            System.out.print(it.next() + " ");
-//        System.out.print(it.next() + " ");
-//    }
 }

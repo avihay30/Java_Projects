@@ -10,7 +10,7 @@ public class MyArray implements MyIterator {
     public MyArray(int[] arr) {
         this.arr = new int[arr.length];
         // copying given arr to class arr
-		for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             this.arr[i] = arr[i];
         }
     }
@@ -30,17 +30,8 @@ public class MyArray implements MyIterator {
     @Override
     public int next() {
         if (!hasNext()) {
-            throw new NoSuchElementException(
-                    "There are no elements left in MyArray, please use hasNext to check beforehand");
+            throw new NoSuchElementException();
         }
         return arr[index++];
     }
-
-//    public static void main(String[] args) {
-//        int[] x = {2, 4, 6, 1};
-//        MyIterator it = new MyArray(x);
-//        while(it.hasNext())
-////            while (true)
-//            System.out.print(it.next() + " ");
-//    }
 }

@@ -5,5 +5,6 @@ package iterator;
    and hasNext() returns if there is any next. */
 public interface MyIterator {
     boolean hasNext();
+
     int next();
 }

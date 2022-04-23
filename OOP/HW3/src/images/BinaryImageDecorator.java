@@ -33,8 +33,7 @@ public abstract class BinaryImageDecorator implements Image {
         // if both images defined in x,y
         if (isBase1In && isBase2In) {
             return getCombinedColor(x, y);
-        }
-        else if (isBase1In) return base1.get(x, y);
+        } else if (isBase1In) return base1.get(x, y);
         else if (isBase2In) return base2.get(x, y);
         else return RGB.BLACK;
     }

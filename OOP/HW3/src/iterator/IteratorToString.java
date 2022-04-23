@@ -4,7 +4,8 @@ package iterator;
 // class is final in order to not allow inheriting this class.
 public final class IteratorToString {
     // empty constructor, not to allow `new` on this class. it's a utility class
-    private IteratorToString() {}
+    private IteratorToString() {
+    }
 
     /**
      * @param it MyIterator to create string from
@@ -13,7 +14,7 @@ public final class IteratorToString {
     public static String toString(MyIterator it) {
         StringBuilder stringBuilder = new StringBuilder("[");
         // appending the next in the iterator and space afterwards
-        while(it.hasNext())
+        while (it.hasNext())
             stringBuilder.append(it.next()).append(" ");
         if (stringBuilder.length() != 1) // if the iterator wasn't empty
             stringBuilder.deleteCharAt(stringBuilder.length() - 1); // delete last empty space
@@ -21,10 +22,4 @@ public final class IteratorToString {
 
         return stringBuilder.toString();
     }
-
-//    public static void main(String[] args) {
-//        System.out.println(IteratorToString.toString(new Fibonacci(-1)));
-//        System.out.println(IteratorToString.toString(new Fibonacci(8)));
-//        System.out.println(IteratorToString.toString(new MyArray(new int[]{1, 2})));
-//    }
 }

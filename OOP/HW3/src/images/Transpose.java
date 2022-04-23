@@ -27,10 +27,4 @@ public class Transpose implements Image {
     public RGB get(int x, int y) {
         return baseImage.get(y, x);
     }
-
-//    public static void main(String[] args) {
-//        Image image = new Transpose(new Gradient(100, 200, RGB.BLUE, RGB.GREEN));
-////        Displayer.display(image);
-//        image.get(1, 0);
-//    }
 }
