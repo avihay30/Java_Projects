@@ -1,6 +1,9 @@
 package cities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 // class that represent some country and it's cities
 public class Country implements Comparable<Country> {
@@ -88,15 +91,4 @@ public class Country implements Comparable<Country> {
         reportStr.delete(reportStr.length() - 2, reportStr.length());
         return reportStr.toString();
     }
-
-//    public static void main(String[] args) {
-//        Country country = new Country("Spain");
-//        City city1 = new City("Barcelona", country,160);
-//        City city2 = new City("Granada", country,233764);
-//        country.addCity(city2);
-//        country.addCity(city1);
-//
-//        System.out.println(country.smallCities(500000));
-//        System.out.println(country.report());
-//    }
 }

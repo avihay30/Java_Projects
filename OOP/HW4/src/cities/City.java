@@ -49,8 +49,6 @@ public class City implements Comparable<City> {
      */
     @Override
     public int compareTo(City o) {
-        if (equals(o)) return 0; // if both are equal
-
         // if both countries are equal - comparing by city name
         if (country.equals(o.getCountry()))
             return name.compareTo(o.getName());

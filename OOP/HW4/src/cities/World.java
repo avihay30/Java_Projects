@@ -1,18 +1,20 @@
 package cities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 // class that represent the world that maps all the countries with their cities
 public class World {
     // countries mapped by their name
-    private Map<String, Country> countries = new HashMap<>();
+    private Map<String, Country> countries = new TreeMap<>();
 
     /**
      * @param name of Country to be created and inserted to countries map
      */
     public void addCountry(String name) {
-        Country country = new Country(name);
-        countries.put(name, country);
+        countries.put(name, new Country(name));
     }
 
     /**
@@ -25,8 +27,7 @@ public class World {
         if (country == null)
             throw new IllegalArgumentException("No such country has been found\n");
 
-        City city = new City(name, country, population);
-        country.addCity(city);
+        country.addCity(new City(name, country, population));
     }
 
     /**
@@ -34,7 +35,7 @@ public class World {
      */
     public int population() {
         int sum = 0;
-        for (Country country: countries.values()) {
+        for (Country country : countries.values()) {
             sum += country.population();
         }
         return sum;
@@ -47,10 +48,9 @@ public class World {
      */
     public List<City> smallCities(int under) {
         List<City> cityList = new ArrayList<>();
-        for (Country country: countries.values()) {
+        for (Country country : countries.values()) {
             cityList.addAll(country.smallCities(under));
         }
-        Collections.sort(cityList);
         return cityList;
     }
 
@@ -60,27 +60,11 @@ public class World {
      */
     public String report() {
         StringBuilder reportStr = new StringBuilder();
-        for (Country country: countries.values()) {
+        for (Country country : countries.values()) {
             reportStr.append(country.report() + "\n");
         }
 
         reportStr.append("Total population is " + population() + "\n");
-
         return reportStr.toString();
     }
-
-//    public static void main(String[] args) {
-//        World w = new World();
-//        w.addCountry("Spain");
-//        w.addCity("Granada", "Spain", 233764);
-//        w.addCountry("Brazil");
-//        w.addCity("Salvador",  "Brazil", 2677000);
-//        w.addCity("Barcelona", "Spain", 1615000);
-//        w.addCity("Rio de Janeiro",  "Brazil", 6320000);
-//
-//        System.out.println(w.report());
-//        int bound = 2000000;
-//        System.out.println("Cities with population under " + bound + ":");
-//        System.out.println(w.smallCities(bound));
-//    }
 }

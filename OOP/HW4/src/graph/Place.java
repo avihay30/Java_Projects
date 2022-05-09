@@ -1,6 +1,6 @@
 package graph;
 
-// Class that represent a 2 dimensional place in a qube
+// Class that represent a 2 dimensional place in a cube
 public class Place {
     private int x, y;
 
@@ -38,11 +38,4 @@ public class Place {
     public int hashCode() {
         return x * 31 + y;
     }
-
-//    public static void main(String[] args) {
-//        Place place = new Place(1, 2, 4);
-//        Place place1 = new Place(2, 1, 5);
-//        System.out.println(place.hashCode());
-//        System.out.println(place1.hashCode());
-//    }
 }

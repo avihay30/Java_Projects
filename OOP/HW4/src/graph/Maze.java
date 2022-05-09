@@ -18,6 +18,8 @@ public class Maze implements GraphInterface<Place> {
         end = new Place(endx, endy, size);
         maze = new Place[size][size];
         initMaze(); // init maze with no walls
+        maze[startx][starty] = start;
+        maze[endx][endy] = end;
     }
 
     /**
@@ -185,19 +187,4 @@ public class Maze implements GraphInterface<Place> {
         }
         return null;
     }
-
-//    public static void main(String[] args) throws GraphException {
-//        Maze m = new Maze(4, 0, 0, 3, 3);
-//        m.addWall(1, 1);
-//        m.addWall(3, 1);
-//        m.addWall(0, 1);
-//        m.addWall(2, 3);
-//        m.addWall(2, 3);
-//        m.addWall(1, 3);
-//        System.out.println(m);
-//        System.out.println(m.isSolvable());
-//
-//        ConnectionChecker<Place> cc = new ConnectionChecker<>(m);
-//        System.out.println(cc.check(new Place(0,0,4), new Place(3, 3,4)));
-//    }
 }

@@ -31,11 +31,14 @@ public class ConnectionChecker<V> {
         if (!markedVertices.add(v1)) return false;
 
         if (v1.equals(v2)) return true;
+        if (graph.neighbours(v1).contains(v2)) return true; // if some neighbor is v2
         for (V neighbor : graph.neighbours(v1)) {
-            if (neighbor.equals(v2)) return true; // if some neighbor is v2
-                // recursive call on a neighbor.
-                // only if the call returns with true - stops the loop and return true.
-            else if (isConnected(neighbor, v2, markedVertices)) return true;
+            // recursive call on a neighbor.
+            // only if the call returns with true - stops the loop and return true.
+            // if neighbor is already marked by other neighbor vertices
+            if (!markedVertices.contains(neighbor)) {
+                if (isConnected(neighbor, v2, markedVertices)) return true;
+            }
         }
         return false; // if there are no neighbors to v1
     }
