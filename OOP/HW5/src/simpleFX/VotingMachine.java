@@ -16,8 +16,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+// Class that represents a Slot in Mine matrix
 public class VotingMachine extends Application {
 	private int counter;
+	// label that indicate the counter
 	private Label label = new Label("" + counter);
 	
 	public static void main(String[] args) {
@@ -32,7 +34,8 @@ public class VotingMachine extends Application {
 
 		primaryStage.show();
 	}
-	
+
+	// creating root Parent for Scene
 	private VBox createRoot() {
 		VBox root = new VBox(25); // 25 is space between buttons and label
 		root.getChildren().addAll(makeHBtns(), makeLabel());
@@ -40,7 +43,8 @@ public class VotingMachine extends Application {
 		root.setPadding(new Insets(10)); // space between border to content
 		return root;
 	}
-	
+
+	// creating the Horizontal buttons for root
 	private Node makeHBtns() {
 		HBox navBtns = new HBox(15);
 		Button btn1 = new Button("Ofra Haza");
@@ -56,7 +60,7 @@ public class VotingMachine extends Application {
 			@Override
 			public void handle(ActionEvent event) {
 				counter = isInc ? counter + 1 : counter - 1;
-				label.setText("" + counter);
+				label.setText("" + counter); // changing label text counter
 			}
 		}
 		
@@ -67,12 +71,14 @@ public class VotingMachine extends Application {
 		
 		return navBtns;
 	}
-	
+
+	// creating the counter Label for root
 	private Node makeLabel() {		
 		BackgroundFill bgFill = new BackgroundFill(Color.RED, null, null);
 		Background bg = new Background(bgFill);
 		label.setBackground(bg);
-		
+
+		// adding padding top+bottom:10, right+left: 20
 		label.setPadding(new Insets(10, 20, 10, 20));
 		label.setMaxWidth(Double.MAX_VALUE);
 		label.setAlignment(Pos.CENTER); // center text in label
