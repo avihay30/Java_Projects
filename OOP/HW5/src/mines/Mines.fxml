@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mines.MinesController">
+   <children>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="115.0">
+         <children>
+            <Button fx:id="resetBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Reset" />
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="width" />
+                  <TextField fx:id="width" prefHeight="19.0" prefWidth="47.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="height" />
+                  <TextField fx:id="height" prefHeight="19.0" prefWidth="47.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="mines" />
+                  <TextField fx:id="minesAmount" prefHeight="19.0" prefWidth="47.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </VBox>
+      <StackPane fx:id="stackPane" prefHeight="282.0" prefWidth="291.0" />
+   </children>
+</HBox>
