@@ -59,7 +59,6 @@ public class Mines {
         // if tries to open a mine return false
         if (slot.isMined()) return false;
         slot.setSlotStatus(SlotStatus.OPENED);
-        // todo: check if try to open an opened slot
 
         // if there are no surrounding mines
         if (slot.getSurroundingMinesAmount() == 0) {
@@ -78,7 +77,7 @@ public class Mines {
      */
     public void toggleFlag(int x, int y) {
         Slot slot = mineMatrix[x][y];
-        // todo: check if there is a chance of flagging an opened slot
+
         if (slot.getSlotStatus().equals(SlotStatus.FLAGGED))
             slot.setSlotStatus(SlotStatus.CLOSED);
         else if (slot.getSlotStatus().equals(SlotStatus.CLOSED))
@@ -154,15 +153,5 @@ public class Mines {
             }
         }
         return slots;
-    }
-
-    public static void main(String[] args) {
-        Mines m = new Mines(3, 4, 0);
-        m.addMine(0, 1);
-        m.addMine(2, 3);
-        m.open(2, 0);
-        System.out.println(m);
-        m.toggleFlag(0, 1);
-        System.out.println(m);
     }
 }
