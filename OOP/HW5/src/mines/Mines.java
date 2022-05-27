@@ -58,6 +58,10 @@ public class Mines {
         Slot slot = mineMatrix[i][j];
         // if tries to open a mine return false
         if (slot.isMined()) return false;
+        // it's a recursive method so if calling open
+        // on an opened slot it's already true.
+        if (slot.getSlotStatus().equals(SlotStatus.OPENED)) return true;
+
         slot.setSlotStatus(SlotStatus.OPENED);
 
         // if there are no surrounding mines

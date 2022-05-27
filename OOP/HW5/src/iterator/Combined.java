@@ -42,13 +42,4 @@ public class Combined<E> implements Iterable<E> {
     public Iterator<E> iterator() { // returning the private CombinedIterator
         return new CombinedIterator();
     }
-
-//    public static void main(String[] args) {
-//        List<String> list = Arrays.asList("one", "two", "three");
-//        Set<String> set = new TreeSet<>();
-//        set.addAll(Arrays.asList("B", "A", "D", "C", "E"));
-//        Combined<String> c = new Combined<>(set, list);
-//        for (String s : c)
-//            System.out.print(s + " ");
-//    }
 }

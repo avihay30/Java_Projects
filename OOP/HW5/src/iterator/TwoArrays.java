@@ -41,13 +41,4 @@ public class TwoArrays implements Iterable<Integer> {
             }
         };
     }
-
-//    public static void main(String[] args) {
-//        int[] a1 = { 1, 2, 3, 4 };
-//        int[] a2 = { 100, 101, 102, 103, 104, 105, 106 };
-//
-//        TwoArrays aa = new TwoArrays(a1, a2);
-//        for (int i : aa)
-//            System.out.print(i + " ");
-//    }
 }

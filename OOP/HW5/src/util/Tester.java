@@ -1,7 +1,11 @@
 // 8090580
 package util;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Constructor;
@@ -218,7 +222,7 @@ public class Tester {
 	}
 
 	public boolean checkThrows(Thrower thrower, Class<? extends Exception> ec,
-							   String msg) {
+			String msg) {
 		try {
 			thrower.run();
 		} catch (Exception c) {
@@ -305,16 +309,16 @@ public class Tester {
 		return descr(m.getModifiers()) + m.getReturnType().getSimpleName() + " "
 				+ m.getName() + "(" + descr(m.getParameterTypes()) + ")"
 				+ (m.getExceptionTypes().length == 0
-				? ""
-				: " throws " + descr(m.getExceptionTypes()));
+						? ""
+						: " throws " + descr(m.getExceptionTypes()));
 	}
 
 	private static String descr(Constructor<?> c, Class<?> realClass) {
 		return descr(c.getModifiers()) + realClass.getSimpleName() + "("
 				+ descr(c.getParameterTypes()) + ")"
 				+ (c.getExceptionTypes().length == 0
-				? ""
-				: " throws " + descr(c.getExceptionTypes()));
+						? ""
+						: " throws " + descr(c.getExceptionTypes()));
 
 	}
 
@@ -341,7 +345,7 @@ public class Tester {
 	}
 
 	private static boolean equalConstructors(Constructor<?> m1,
-											 Constructor<?> m2) {
+			Constructor<?> m2) {
 		if (!Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()))
 			return false;
 		// if (!Arrays.equals(m1.getExceptionTypes(), m2.getExceptionTypes()))
@@ -388,7 +392,7 @@ public class Tester {
 
 	public void testEqualClasses(Class<?> user, Class<?> ref) {
 		String cName = user.getSimpleName();
-
+		
 		if (!Modifier.isPublic(user.getModifiers())) {
 			error("Class " + cName + " should be public");
 			return;
@@ -459,7 +463,7 @@ public class Tester {
 	}
 
 	private static void zipFile(File fileToZip, String fileName,
-								ZipOutputStream zipOut) throws IOException {
+			ZipOutputStream zipOut) throws IOException {
 		if (fileToZip.isHidden()) {
 			return;
 		}

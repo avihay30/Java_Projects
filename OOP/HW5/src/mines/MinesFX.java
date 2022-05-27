@@ -12,7 +12,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
@@ -39,7 +45,7 @@ public class MinesFX extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         HBox hBox;
         // save stage variable to resize and limit size when reset is pressed
         stage = primaryStage;
@@ -64,9 +70,9 @@ public class MinesFX extends Application {
 
     /**
      * Build & Create all defaults for first show:
-     *  EventHandler for resetBtn.
-     *  default text for TextFields, default grid pane.
-     *  and allow grid pane to grow Horizontally & Vertically
+     * EventHandler for resetBtn.
+     * default text for TextFields, default grid pane.
+     * and allow grid pane to grow Horizontally & Vertically
      */
     private void initStage() {
         addResetEventHandler();
@@ -129,6 +135,8 @@ public class MinesFX extends Application {
      */
     private void refreshGridContent() {
         for (Node node : gridPane.getChildren()) {
+            // check if later casting to GameButton is valid
+            if (!(node instanceof GameButton)) return;
             GameButton button = (GameButton) node;
             refreshGridBtnContent(button);
         }
@@ -211,7 +219,8 @@ public class MinesFX extends Application {
             switch (event.getButton()) {
                 case PRIMARY: // when left click
                     // if user pressed on a mine
-                    if (!mines.open(button.getX(), button.getY())) {
+                    // and didn't win yet: for blocking playing after player won already
+                    if (!mines.open(button.getX(), button.getY()) && !winnerDialogIsShown) {
                         isLose = true;
                         mines.setShowAll(true);
                     }
