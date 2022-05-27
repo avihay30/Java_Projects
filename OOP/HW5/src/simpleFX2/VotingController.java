@@ -2,32 +2,27 @@ package simpleFX2;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+// Class that is a Controller for getting data on some of fxml Nodes
+// and handle click events on buttons
 public class VotingController {
-	private int counter;
+    private int counter;
 
     @FXML
     private Label counterLabel;
 
     @FXML
-    private Button ofraBtn;
-
-    @FXML
-    private Button yardenaBtn;
-
-    @FXML
     void clickOfra(ActionEvent event) {
-    	counterLabel.setText("" + ++counter);
+        counterLabel.setText("" + ++counter);
     }
 
     @FXML
     void clickYardena(ActionEvent event) {
-    	counterLabel.setText("" + --counter);
+        counterLabel.setText("" + --counter);
     }
-    
+
     public Label getLabel() {
-    	return counterLabel;
+        return counterLabel;
     }
 }
